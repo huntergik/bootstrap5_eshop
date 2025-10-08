@@ -2,7 +2,37 @@ window.addEventListener('scroll', function () {
     document.getElementById('header-nav').classList.toggle('headernav-scroll', window.scrollY > 135);
 });
 
-$(document).ready(function(){
+const offcanvasCartEl = document.getElementById('offcanvasCart');
+const offcanvasCart = new bootstrap.Offcanvas(offcanvasCartEl);
+
+document.querySelectorAll('.closecart').forEach(item => {
+    item.addEventListener('click', (e) => {
+        e.preventDefault();
+        offcanvasCart.hide();
+        // let href = item.href.split('#').pop();
+        const href = item.dataset.href;
+        offcanvasCartEl.addEventListener('hidden.bs.offcanvas', () => {
+            document.getElementById(href).scrollIntoView();
+        });
+    });
+});
+
+$(document).ready(function () {
+  // кнопка на верх
+  $(window).scroll(function () {
+        if ($(this).scrollTop() > 300) {
+            $('#top').fadeIn();
+        } else {
+            $('#top').fadeOut();
+        }
+    });
+
+  $('#top').click(function () {
+        $('html, body').animate({ scrollTop: 0 }, 500);
+        return false;
+  });
+  
+  // Карусель
   $(".owl-carousel-full").owlCarousel({
       margin: 20,
       responsive:{

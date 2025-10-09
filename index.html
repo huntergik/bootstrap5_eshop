@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>E-shop :: Home</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -85,10 +85,10 @@
         <div class="container-fluid">
           <div class="row align-items-center">
 
-            <div class="col-sm-6 col-lg-4">
+            <div class="col-sm-6">
               <a class="header-logo h1" href="index.html">E-Shop</a>
             </div>            
-
+            <!--
             <div class="col-lg-4 order-md-2 cart-buttons text-end d-none d-lg-block">
               
               <a class="btn p-1" href="#">
@@ -102,8 +102,8 @@
               </button>
 
             </div>
-
-            <div class="col-lg-4 col-sm-6 order-md-1 mt-2 mt-md-0">
+            -->
+            <div class="col-sm-6 mt-2 mt-md-0">
               <form action="">
                 <div class="input-group">
                   <input type="text" class="form-control" name="search" placeholder="Searching..." aria-label="Recipient’s username"
@@ -121,29 +121,6 @@
         <!-- container-fluid -->
       </div>
       <!-- header-middle -->
-
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart" aria-labelledby="offcanvasCartLabel">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasCartLabel">Cart</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-          <div>
-            Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-          </div>
-          <div class="dropdown mt-3">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-              Dropdown button
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item closecart" href="#footer" data-href="footer">Footer</a></li>
-              <li><a class="dropdown-item closecart" href="#about" data-href="#about">About</a></li>
-              <li><a class="dropdown-item closecart" href="#map" data-href="#map">Map</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- offcanvas -->
     </header>
 
     <div class="header-bottom sticky-top" id="header-nav">
@@ -192,8 +169,8 @@
                   </a>
     
                   <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" href="#">Shoes</a></li>
-                    <li><a class="dropdown-item" href="#">Jeans</a></li>
+                    <li><a class="dropdown-item" href="category.html">Shoes</a></li>
+                    <li><a class="dropdown-item" href="category.html">Jeans</a></li>
     
                     <li class="nav-item dropend">
                       <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown"
@@ -201,21 +178,27 @@
                       <ul class="dropdown-menu dropdown-menu-end">
     
                         <li>
-                          <a class="dropdown-item" href="#">Men's Sportswear</a>
+                          <a class="dropdown-item" href="category.html">Men's Sportswear</a>
                         </li>
     
                         <li>
-                          <a class="dropdown-item" href="#">Women's Sportswear</a>
+                          <a class="dropdown-item" href="category.html">Women's Sportswear</a>
                         </li>
     
                         <li>
-                          <a class="dropdown-item" href="#">Baby's Sportswear</a>
+                          <a class="dropdown-item" href="category.html">Baby's Sportswear</a>
                         </li>
     
                       </ul>
                       <!-- dropdown-menu-end -->
                     </li>
                     <!-- nav-item dropend -->
+                    <li>
+                      <a class="dropdown-item" href="category.html">Coat</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="category.html">Shirts</a>
+                    </li>
     
                   </ul>
                   <!-- dropdown-menu -->
@@ -230,18 +213,20 @@
           </div>
           <!-- offcanvas offcanvas-start -->
 
-          <div class="d-block d-lg-none">
+          <!-- <div class="d-block d-lg-none"> -->
+          <div>
             <a class="btn p-1" href="#">
               <i class="fa-solid fa-heart"></i>
               <span class="badge text-bg-warning cart-badge bg-warning rounded-circle">3</span>
             </a>
             
-            <button class="btn p-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart"
+            <button class="btn p-1" id="cart-open" type="button" data-bs-toggle="offcanvas2" data-bs-target="#offcanvasCart"
               aria-controls="offcanvasCart">
               <i class="fa-solid fa-cart-shopping"></i>
               <span class="badge text-bg-warning cart-badge bg-warning rounded-circle">5</span>
             </button>
           </div>
+          <!-- d-block d-lg-none -->
     
         </div>
         <!-- container-fluid -->
@@ -250,6 +235,76 @@
     
     </div>
     <!-- header-bottom -->
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart" aria-labelledby="offcanvasCartLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasCartLabel">Cart</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+
+      <div class="offcanvas-body">
+
+        <div class="table-responsive">
+          <table class="table offcanvasCart-table">
+            <tbody>
+              <tr>
+                <td class="product-img-td">
+                  <a href="#"><img src="assets/img/products/1.jpg" alt=""></a>
+                </td>
+                <td><a href="#">Product 1 Lorem ipsum dolor sit amet consectetur adipisicing.</a></td>
+                <td>$65</td>
+                <td>&times;1</td>
+                <td><button class="btn btn-danger"><i class="fa-regular fa-circle-xmark"></i></button></td>
+              </tr>
+              <tr>
+                <td class="product-img-td">
+                  <a href="#"><img src="assets/img/products/2.jpg" alt=""></a>
+                </td>
+                <td><a href="#">Product 2</a></td>
+                <td>$80</td>
+                <td>&times;2</td>
+                <td><button class="btn btn-danger"><i class="fa-regular fa-circle-xmark"></i></button></td>
+              </tr>
+              <tr>
+                <td class="product-img-td">
+                  <a href="#"><img src="assets/img/products/3.jpg" alt=""></a>
+                </td>
+                <td><a href="#">Product 3</a></td>
+                <td>$100</td>
+                <td>&times;1</td>
+                <td><button class="btn btn-danger"><i class="fa-regular fa-circle-xmark"></i></button></td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td class="text-end" colspan="4">Total:</td>
+                <td>$325</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <!-- "table-responsive -->
+
+        <div class="text-end mt-3">
+          <a class="btn btn-outline-warning" href="#">Cart</a>
+          <a class="btn btn-outline-secondary" href="#">Checkout</a>
+        </div>
+
+        <div class="dropdown mt-3">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+            Dropdown button
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item closecart" href="#footer" data-href="footer">Footer</a></li>
+            <li><a class="dropdown-item closecart" href="#about" data-href="about">About</a></li>
+            <li><a class="dropdown-item closecart" href="#map" data-href="map">Map</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <!-- offcanvas-body -->
+    </div>
+    <!-- offcanvas -->
 
 
     <main class="main">

@@ -5,6 +5,24 @@ window.addEventListener('scroll', function () {
 const offcanvasCartEl = document.getElementById('offcanvasCart');
 const offcanvasCart = new bootstrap.Offcanvas(offcanvasCartEl);
 
+document.getElementById('cart-open').addEventListener('click', (e) => {
+    e.preventDefault();
+    offcanvasCart.toggle();
+});
+
+document.querySelectorAll('.closecart').forEach(item => {
+    item.addEventListener('click', (e) => {
+        e.preventDefault();
+        offcanvasCart.hide();
+        let href = item.dataset.href;
+        document.getElementById(href).scrollIntoView();
+    });
+});
+
+/*
+const offcanvasCartEl = document.getElementById('offcanvasCart');
+const offcanvasCart = new bootstrap.Offcanvas(offcanvasCartEl);
+
 document.querySelectorAll('.closecart').forEach(item => {
     item.addEventListener('click', (e) => {
         e.preventDefault();
@@ -16,6 +34,7 @@ document.querySelectorAll('.closecart').forEach(item => {
         });
     });
 });
+*/
 
 $(document).ready(function () {
   // кнопка на верх

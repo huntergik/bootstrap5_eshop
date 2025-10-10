@@ -550,6 +550,48 @@ ul.social-icons a:hover {
   opacity: 1;
 }
 
+
+
+/* **************************** Cart page ********************************** */
+.cart-content table img {
+  max-width: 50px;
+}
+.cart-content table th {
+  text-align: center;
+}
+.cart-content table td {
+  padding: 1rem;
+}
+
+.cart-content-title {
+  text-decoration: none;
+  display: block;
+}
+
+.cart-qty {
+  width: 70px;
+}
+
+.btn-coupon {
+  color: var(--text-color);
+  text-decoration: none;
+}
+.btn-coupon:hover {
+  color: var(--contrast-color);
+}
+
+.cart-summary h3 {
+  color: #000;
+}
+
+.cart-summary .btn {
+  padding: 1rem;
+}
+
+/* **************************** Cart page ********************************** */
+
+
+
 /* **************************** Main ********************************** */
 
 @media only screen and (min-width: 992px) {

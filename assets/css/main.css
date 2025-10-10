@@ -486,6 +486,14 @@ ul.social-icons a:hover {
 }
 
 
+.nav-tabs .nav-link {
+  border-radius: 0;
+  color: var(--contrast-color);
+}
+.tab-content {
+  padding-top: 20px;
+}
+
 /* **************************** Product Page ********************************** */
 
 
@@ -566,4 +574,12 @@ ul.social-icons a:hover {
   .sidebar .collapse-filters-btn {
     display: none;
   }
+}
+
+
+@media only screen and (max-width: 500px) {
+  .product-content-details .nav-tabs .nav-link {
+    padding-left: 8px;
+    padding-right: 8px;
+  }  
 }
